@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Rosa Roja 🌹</title>
+
+  <style>
+    /* ======= ESTILO GENERAL ======= */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a001a 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      text-shadow: 0 0 15px red, 0 0 30px crimson;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px crimson; }
+      to { text-shadow: 0 0 25px red, 0 0 50px darkred; }
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    section h2 {
+      text-align: center;
+      color: #ff4d6d;
+      font-size: 2em;
+      text-shadow: 0 0 15px #ff4d6d;
+    }
+
+    section p {
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    /* ======= IMÁGENES ======= */
+    .imagen {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+      margin: 20px 0;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    .imagen:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 128, 160, 0.8);
+    }
+
+    /* ======= PÉTALOS ======= */
+    .petal {
+      position: fixed;
+      top: -10px;
+      background: radial-gradient(circle, #ff4d6d 40%, transparent 70%);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ======= BOTÓN DE MÚSICA ======= */
+    #musicBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: radial-gradient(circle, #ff4d6d, #b3003c);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 22px;
+      box-shadow: 0 0 20px #ff4d6d;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 100;
+    }
+
+    #musicBtn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 30px #ff8099;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>La Rosa Roja 🌹</h1>
+    <p>La flor que encarna amor, belleza y misterio eterno.</p>
+  </header>
+
+<!-- 🎵 Música automática con control -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="music/stranger_sun.mp3" type="audio/mpeg">
+  </audio>
+  <!-- Botón flotante para pausar/reanudar -->
+  <button id="musicBtn">🎵</button>
+
+  <!-- ======= SECCIONES ======= -->
+  <section>
+    <h2>Nombre científico</h2>
+    <img src="image/rosa_roja.jpg" alt="Rosa gallica" class="imagen">
+    <p>La rosa roja pertenece al género <em>Rosa</em> dentro de la familia <em>Rosaceae</em>. Su nombre científico más común es <strong>Rosa gallica</strong>. Existen miles de variedades híbridas, pero la Rosa gallica es una de las más antiguas y cultivadas desde tiempos romanos.</p>
+  </section>
+
+  <section>
+    <h2>Historia</h2>
+    <img src="image/grecia_rosa.jpg" alt="Historia de la rosa roja" class="imagen">
+    <p>El cultivo de la rosa roja se remonta a más de 5.000 años. En la antigua Persia y Mesopotamia ya era símbolo de amor y belleza. Los griegos la asociaron con Afrodita, diosa del amor, mientras que en Roma fue emblema de pasión y sacrificio. Durante la Edad Media, su cultivo se extendió por Europa, convirtiéndose en una flor sagrada y medicinal.</p>
+  </section>
+
+  <section>
+    <h2>Utilidad</h2>
+    <img src="image/utilidad_rosa.jpg" alt="Usos de la rosa roja" class="imagen">
+    <p>La rosa roja tiene múltiples usos: en perfumería se aprovecha su aceite esencial para crear fragancias únicas; en cosmética se usa su extracto por sus propiedades hidratantes y antioxidantes; en gastronomía, sus pétalos se emplean en dulces y tés aromáticos. También tiene valor ornamental y cultural, siendo símbolo de amor y respeto.</p>
+  </section>
+
+  <section>
+    <h2>Beneficios</h2>
+    <img src="image/rosas_muchas.jpg" alt="Beneficios de la rosa roja" class="imagen">
+    <p>Las rosas rojas poseen propiedades antiinflamatorias, antioxidantes y calmantes. Su aroma ayuda a reducir el estrés y la ansiedad, mientras que su aceite esencial se usa en terapias de relajación. Además, sus infusiones pueden mejorar la digestión y fortalecer el sistema inmunológico.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 La Rosa Roja | Creada con amor y código 🌹</p>
+  </footer>
+
+  <script>
+    // ======= EFECTO DE PÉTALOS =======
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+    setInterval(createPetal, 300);
+
+    // ======= CONTROL DE MÚSICA =======
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "🔊";
+      } else {
+        music.pause();
+        btn.textContent = "🔇";
+      }
+    });
+  </script>
+</body>
+</html>
